@@ -14,11 +14,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+         \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            PositionSeeder::class,
+            FactorySeeder::class,
+            ContainerSeeder::class,
+            LineSeeder::class,
+            FormatSeeder::class,
+            CapSeeder::class,
+            ProductSeeder::class,
+            TankSeeder::class,
+            FormattableSeeder::class,
+            SyrupSeeder::class,
+            InvertedSyrupSeeder::class,
+            ContainerSupplierSeeder::class,
+            ProductAnalysisSeeder::class,
+            PhysicalChemicalAnalysisSeeder::class,
+            RemovalTorqueAnalysisSeeder::class,
+            RemovalTorqueLbSeeder::class,
+            RemovalTorqueAngleSeeder::class,
+            SectionWeightAnalysisSeeder::class,
+            SectionWeightTopSeeder::class,
+            SectionWeightLabelSeeder::class,
+            SectionWeightBodySeeder::class,
+            SectionWeightBaseSeeder::class
+        ]);
     }
 }
