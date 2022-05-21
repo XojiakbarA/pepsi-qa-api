@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreLineRequest;
 use App\Http\Requests\UpdateLineRequest;
+use App\Http\Resources\LineResource;
 use App\Models\Line;
 
 class LineController extends Controller
@@ -15,7 +16,9 @@ class LineController extends Controller
      */
     public function index()
     {
-        //
+        $lines = Line::all();
+
+        return LineResource::collection($lines);
     }
 
     /**

@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('physical_chemical_analyses', function (Blueprint $table) {
+        Schema::create('physical_chemical_values', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_analysis_id')->constrained()->onDelete('cascade');
+            $table->foreignId('physical_chemical_analysis_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id');
             $table->float('temperature');
             $table->float('pressure');
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('physical_chemical_analyses');
+        Schema::dropIfExists('physical_chemical_values');
     }
 };

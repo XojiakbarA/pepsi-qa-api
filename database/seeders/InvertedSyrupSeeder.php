@@ -26,7 +26,9 @@ class InvertedSyrupSeeder extends Seeder
                 'drink_inverted_brix' => rand(1130, 1149)/100,
                 'drink_acidity' => rand(1190, 1230)/100,
                 'drink_ph' => rand(239, 252)/100,
-                'target' => rand(1079, 1086)/100
+                'target' => rand(1079, 1086)/100,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         endfor;
     }

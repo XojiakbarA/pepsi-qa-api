@@ -28,7 +28,9 @@ class SyrupSeeder extends Seeder
                 'drink_density' => rand(10411, 10419)/10000,
                 'drink_inverted_brix' => rand(1120, 1149)/100,
                 'drink_acidity' => rand(1190, 1230)/100,
-                'drink_ph' => rand(239, 252)/100
+                'drink_ph' => rand(239, 252)/100,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         endfor;
 
@@ -45,7 +47,9 @@ class SyrupSeeder extends Seeder
                 'drink_density' => rand(10411, 10419)/10000,
                 'drink_inverted_brix' => rand(1120, 1149)/100,
                 'drink_acidity' => rand(1190, 1230)/100,
-                'drink_ph' => rand(239, 252)/100
+                'drink_ph' => rand(239, 252)/100,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         endfor;
 
@@ -62,7 +66,9 @@ class SyrupSeeder extends Seeder
                 'drink_density' => rand(10411, 10419)/10000,
                 'drink_inverted_brix' => rand(1120, 1149)/100,
                 'drink_acidity' => rand(1190, 1230)/100,
-                'drink_ph' => rand(239, 252)/100
+                'drink_ph' => rand(239, 252)/100,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         endfor;
     }

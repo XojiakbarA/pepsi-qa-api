@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('removal_torque_analyses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_analysis_id')->constrained()->onDelete('cascade');
+            $table->foreignId('syrup_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id');
+            $table->foreignId('line_id');
+            $table->foreignId('container_supplier_id');
+            $table->foreignId('format_id');
+            $table->foreignId('cap_id');
             $table->timestamps();
         });
     }

@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\ProductAnalysis;
+use App\Models\PhysicalChemicalValue;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ProductAnalysisPolicy
+class PhysicalChemicalValuePolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class ProductAnalysisPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\ProductAnalysis  $productAnalysis
+     * @param  \App\Models\PhysicalChemicalValue  $physicalChemicalValue
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, ProductAnalysis $productAnalysis)
+    public function view(User $user, PhysicalChemicalValue $physicalChemicalValue)
     {
         //
     }
@@ -48,10 +48,10 @@ class ProductAnalysisPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\ProductAnalysis  $productAnalysis
+     * @param  \App\Models\PhysicalChemicalValue  $physicalChemicalValue
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, ProductAnalysis $productAnalysis)
+    public function update(User $user, PhysicalChemicalValue $physicalChemicalValue)
     {
         //
     }
@@ -60,10 +60,10 @@ class ProductAnalysisPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\ProductAnalysis  $productAnalysis
+     * @param  \App\Models\PhysicalChemicalValue  $physicalChemicalValue
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, ProductAnalysis $productAnalysis)
+    public function delete(User $user, PhysicalChemicalValue $physicalChemicalValue)
     {
         //
     }
@@ -72,10 +72,10 @@ class ProductAnalysisPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\ProductAnalysis  $productAnalysis
+     * @param  \App\Models\PhysicalChemicalValue  $physicalChemicalValue
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, ProductAnalysis $productAnalysis)
+    public function restore(User $user, PhysicalChemicalValue $physicalChemicalValue)
     {
         //
     }
@@ -84,10 +84,10 @@ class ProductAnalysisPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\ProductAnalysis  $productAnalysis
+     * @param  \App\Models\PhysicalChemicalValue  $physicalChemicalValue
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, ProductAnalysis $productAnalysis)
+    public function forceDelete(User $user, PhysicalChemicalValue $physicalChemicalValue)
     {
         //
     }

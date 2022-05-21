@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePhysicalChemicalAnalysisRequest;
 use App\Http\Requests\UpdatePhysicalChemicalAnalysisRequest;
+use App\Http\Resources\PhysicalChemicalAnalysisResource;
 use App\Models\PhysicalChemicalAnalysis;
+use App\Models\PhysicalChemicalValue;
 
 class PhysicalChemicalAnalysisController extends Controller
 {
@@ -15,7 +17,9 @@ class PhysicalChemicalAnalysisController extends Controller
      */
     public function index()
     {
-        //
+        $analyses = PhysicalChemicalAnalysis::latest()->paginate(5);
+
+        return PhysicalChemicalAnalysisResource::collection($analyses);
     }
 
     /**

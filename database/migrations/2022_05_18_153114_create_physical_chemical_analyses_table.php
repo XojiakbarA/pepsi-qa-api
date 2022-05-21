@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_analyses', function (Blueprint $table) {
+        Schema::create('physical_chemical_analyses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('syrup_id')->constrained()->onDelete('cascade');
             $table->foreignId('line_id');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_analyses');
+        Schema::dropIfExists('physical_chemical_analyses');
     }
 };

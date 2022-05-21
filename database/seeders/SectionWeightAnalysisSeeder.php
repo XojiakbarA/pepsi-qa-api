@@ -17,8 +17,14 @@ class SectionWeightAnalysisSeeder extends Seeder
     {
         for ($i = 0; $i < 5; $i++) :
             DB::table('section_weight_analyses')->insert([
-                'product_analysis_id' => $i + 1,
-                'user_id' => $i + 1
+                'syrup_id' => $i + 1,
+                'user_id' => $i + 1,
+                'line_id' => 1,
+                'container_supplier_id' => 2,
+                'format_id' => 2,
+                'cap_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         endfor;
     }

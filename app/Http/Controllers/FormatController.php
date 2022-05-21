@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreFormatRequest;
 use App\Http\Requests\UpdateFormatRequest;
+use App\Http\Resources\FormatResource;
 use App\Models\Format;
 
 class FormatController extends Controller
@@ -15,7 +16,9 @@ class FormatController extends Controller
      */
     public function index()
     {
-        //
+        $formats = Format::all();
+
+        return FormatResource::collection($formats);
     }
 
     /**

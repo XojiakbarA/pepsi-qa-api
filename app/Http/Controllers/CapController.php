@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCapRequest;
 use App\Http\Requests\UpdateCapRequest;
+use App\Http\Resources\CapResource;
 use App\Models\Cap;
 
 class CapController extends Controller
@@ -15,7 +16,9 @@ class CapController extends Controller
      */
     public function index()
     {
-        //
+        $caps = Cap::all();
+
+        return CapResource::collection($caps);
     }
 
     /**

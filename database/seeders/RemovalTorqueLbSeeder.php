@@ -18,6 +18,8 @@ class RemovalTorqueLbSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) :
             $lbs = array_combine(range(1, 30), array_map(function () { return rand(12, 16); }, range(1, 30)));
             $lbs['removal_torque_analysis_id'] = $i + 1;
+            $lbs['created_at'] = now();
+            $lbs['updated_at'] = now();
 
             DB::table('removal_torque_lbs')->insert($lbs);
         endfor;

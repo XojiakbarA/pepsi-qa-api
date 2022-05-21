@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreContainerSupplierRequest;
 use App\Http\Requests\UpdateContainerSupplierRequest;
+use App\Http\Resources\ContainerSupplierResource;
 use App\Models\ContainerSupplier;
 
 class ContainerSupplierController extends Controller
@@ -15,7 +16,9 @@ class ContainerSupplierController extends Controller
      */
     public function index()
     {
-        //
+        $containerSuppliers = ContainerSupplier::all();
+
+        return ContainerSupplierResource::collection($containerSuppliers);
     }
 
     /**
