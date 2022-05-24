@@ -26,7 +26,7 @@ class PhysicalChemicalValueResource extends JsonResource
             'acidity' => $this->acidity,
             'ph' => $this->ph,
             'fullness' => $this->fullness,
-            'time' => $this->created_at->format('h:i'),
+            'time' => $this->created_at->setTimeZone('Asia/Tashkent')->format('G:i'),
             'checked' => $this->user->name
         ];
     }

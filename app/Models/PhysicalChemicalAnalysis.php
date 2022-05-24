@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\Filterable;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class PhysicalChemicalAnalysis extends Model
 {
     use HasFactory;
+    use Filterable;
 
     public function syrup()
     {
