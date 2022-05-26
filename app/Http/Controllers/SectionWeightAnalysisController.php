@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreSectionWeightAnalysisRequest;
-use App\Http\Requests\UpdateSectionWeightAnalysisRequest;
+use App\Http\Requests\SectionWeightAnalysis\StoreRequest;
+use App\Http\Requests\SectionWeightAnalysis\UpdateRequest;
 use App\Models\SectionWeightAnalysis;
 
 class SectionWeightAnalysisController extends Controller
@@ -31,10 +31,10 @@ class SectionWeightAnalysisController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreSectionWeightAnalysisRequest  $request
+     * @param  \App\Http\Requests\SectionWeightAnalysis\StoreRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSectionWeightAnalysisRequest $request)
+    public function store(StoreRequest $request)
     {
         //
     }
@@ -64,11 +64,11 @@ class SectionWeightAnalysisController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateSectionWeightAnalysisRequest  $request
+     * @param  \App\Http\Requests\SectionWeightAnalysis\UpdateRequest  $request
      * @param  \App\Models\SectionWeightAnalysis  $sectionWeightAnalysis
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSectionWeightAnalysisRequest $request, SectionWeightAnalysis $sectionWeightAnalysis)
+    public function update(UpdateRequest $request, SectionWeightAnalysis $sectionWeightAnalysis)
     {
         //
     }

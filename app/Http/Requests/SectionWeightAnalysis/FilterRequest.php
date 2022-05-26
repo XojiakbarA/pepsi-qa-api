@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\SectionWeightAnalysis;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateSectionWeightBaseRequest extends FormRequest
+class FilterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

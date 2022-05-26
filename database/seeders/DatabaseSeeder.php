@@ -33,10 +33,6 @@ class DatabaseSeeder extends Seeder
             PhysicalChemicalValueSeeder::class,
             RemovalTorqueAnalysisSeeder::class,
             SectionWeightAnalysisSeeder::class,
-            SectionWeightTopSeeder::class,
-            SectionWeightLabelSeeder::class,
-            SectionWeightBodySeeder::class,
-            SectionWeightBaseSeeder::class
         ]);
     }
 }
