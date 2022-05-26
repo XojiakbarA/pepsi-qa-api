@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('container_supplier_id');
             $table->foreignId('format_id');
             $table->foreignId('cap_id');
+            $table->json('removal_torque_values');
             $table->timestamps();
         });
     }
