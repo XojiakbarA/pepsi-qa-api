@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PhysicalChemicalAnalysisResource extends JsonResource
+class RemovalTorqueAnalysisResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -23,8 +23,9 @@ class PhysicalChemicalAnalysisResource extends JsonResource
             'container_supplier_name' => $this->containerSupplier->name,
             'format_value' => $this->format->value,
             'cap_name' => $this->cap->name,
-            'checked_at' => $this->created_at->setTimeZone('Asia/Tashkent')->format('d.m.Y'),
-            'values' => PhysicalChemicalValueResource::collection($this->values)
+            'checked_by' => $this->user->name,
+            'checked_at' => $this->created_at->setTimeZone('Asia/Tashkent')->format('d.m.Y G:i'),
+            'removal_torque_values' => $this->removal_torque_values,
         ];
     }
 }

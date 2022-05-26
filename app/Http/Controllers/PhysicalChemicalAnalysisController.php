@@ -12,7 +12,6 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class PhysicalChemicalAnalysisController extends Controller
 {
-    public const PER_PAGE = 5;
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +19,7 @@ class PhysicalChemicalAnalysisController extends Controller
      */
     public function index(FilterRequest $request, PhysicalChemicalAnalysisFilter $filter) : ResourceCollection
     {
-        $analyses = PhysicalChemicalAnalysis::filter($filter)->latest()->paginate($request->per_page ?? self::PER_PAGE);
+        $analyses = PhysicalChemicalAnalysis::filter($filter)->latest()->paginate($request->per_page ?? 5);
 
         return PhysicalChemicalAnalysisResource::collection($analyses);
     }

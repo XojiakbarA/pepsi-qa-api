@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\PhysicalChemicalAnalysis;
+namespace App\Http\Requests\RemovalTorqueAnalysis;
 
 use Illuminate\Foundation\Http\FormRequest;
 

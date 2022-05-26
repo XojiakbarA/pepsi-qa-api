@@ -23,4 +23,6 @@ Route::apiResource('formats', \App\Http\Controllers\FormatController::class);
 Route::apiResource('lines', \App\Http\Controllers\LineController::class);
 Route::apiResource('container-suppliers', \App\Http\Controllers\ContainerSupplierController::class);
 Route::apiResource('caps', \App\Http\Controllers\CapController::class);
+Route::apiResource('users', \App\Http\Controllers\UserController::class);
 Route::apiResource('physical-chemical-analyses', \App\Http\Controllers\PhysicalChemicalAnalysisController::class);
+Route::apiResource('removal-torque-analyses', \App\Http\Controllers\RemovalTorqueAnalysisController::class);

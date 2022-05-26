@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreRemovalTorqueAnalysisRequest;
-use App\Http\Requests\UpdateRemovalTorqueAnalysisRequest;
+use App\Filters\RemovalTorqueAnalysisFilter;
+use App\Http\Requests\RemovalTorqueAnalysis\FilterRequest;
+use App\Http\Requests\RemovalTorqueAnalysis\StoreRequest;
+use App\Http\Requests\RemovalTorqueAnalysis\UpdateRequest;
+use App\Http\Resources\RemovalTorqueAnalysisResource;
 use App\Models\RemovalTorqueAnalysis;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class RemovalTorqueAnalysisController extends Controller
 {
@@ -13,28 +17,20 @@ class RemovalTorqueAnalysisController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(FilterRequest $request, RemovalTorqueAnalysisFilter $filter) : ResourceCollection
     {
-        //
-    }
+        $analyses = RemovalTorqueAnalysis::filter($filter)->latest()->paginate($request->per_page ?? 6);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return RemovalTorqueAnalysisResource::collection($analyses);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreRemovalTorqueAnalysisRequest  $request
+     * @param  \App\Http\Requests\RemovalTorqueAnalysis\StoreRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRemovalTorqueAnalysisRequest $request)
+    public function store(StoreRequest $request)
     {
         //
     }
@@ -51,24 +47,13 @@ class RemovalTorqueAnalysisController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\RemovalTorqueAnalysis  $removalTorqueAnalysis
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(RemovalTorqueAnalysis $removalTorqueAnalysis)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateRemovalTorqueAnalysisRequest  $request
+     * @param  \App\Http\Requests\RemovalTorqueAnalysis\UpdateRequest  $request
      * @param  \App\Models\RemovalTorqueAnalysis  $removalTorqueAnalysis
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRemovalTorqueAnalysisRequest $request, RemovalTorqueAnalysis $removalTorqueAnalysis)
+    public function update(UpdateRequest $request, RemovalTorqueAnalysis $removalTorqueAnalysis)
     {
         //
     }
