@@ -26,6 +26,7 @@ class FilterRequest extends FormRequest
         return [
             'page' => 'integer',
             'per_page' => 'integer',
+            'syrup_id' => 'integer',
             'product_ids' => 'array',
             'product_ids.*' => 'integer',
             'line_ids' => 'array',

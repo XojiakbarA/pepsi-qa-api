@@ -13,7 +13,7 @@ class FilterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,23 @@ class FilterRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'page' => 'integer',
+            'per_page' => 'integer',
+            'syrup_id' => 'integer',
+            'product_ids' => 'array',
+            'product_ids.*' => 'integer',
+            'line_ids' => 'array',
+            'line_ids.*' => 'integer',
+            'format_ids' => 'array',
+            'format_ids.*' => 'integer',
+            'container_supplier_ids' => 'array',
+            'container_supplier_ids.*' => 'integer',
+            'cap_ids' => 'array',
+            'cap_ids.*' => 'integer',
+            'user_ids' => 'array',
+            'user_ids.*' => 'integer',
+            'from' => 'date',
+            'to' => 'date'
         ];
     }
 }

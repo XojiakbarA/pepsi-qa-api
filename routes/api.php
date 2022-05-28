@@ -26,3 +26,4 @@ Route::apiResource('caps', \App\Http\Controllers\CapController::class);
 Route::apiResource('users', \App\Http\Controllers\UserController::class);
 Route::apiResource('physical-chemical-analyses', \App\Http\Controllers\PhysicalChemicalAnalysisController::class);
 Route::apiResource('removal-torque-analyses', \App\Http\Controllers\RemovalTorqueAnalysisController::class);
+Route::apiResource('section-weight-analyses', \App\Http\Controllers\SectionWeightAnalysisController::class);

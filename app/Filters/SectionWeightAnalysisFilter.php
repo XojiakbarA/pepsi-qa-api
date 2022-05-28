@@ -2,11 +2,12 @@
 
 namespace App\Filters;
 
-use App\Http\Requests\PhysicalChemicalAnalysis\FilterRequest;
+use App\Http\Requests\SectionWeightAnalysis\FilterRequest;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
-class PhysicalChemicalAnalysisFilter extends QueryFilters
+class SectionWeightAnalysisFilter extends QueryFilters
+
 {
     protected Request $request;
 
@@ -48,16 +49,16 @@ class PhysicalChemicalAnalysisFilter extends QueryFilters
 
     public function user_ids(array $term) : Builder
     {
-        return $this->builder->whereRelation('values', fn($q) => $q->whereIn('user_id', $term));
+        return $this->builder->whereIn('user_id', $term);
     }
 
     public function from(string $term) : Builder
     {
-        return $this->builder->whereRelation('values', fn($q) => $q->where('created_at', '>', $term));
+        return $this->builder->where('created_at', '>', $term);
     }
 
     public function to(string $term) : Builder
     {
-        return $this->builder->whereRelation('values', fn($q) => $q->where('created_at', '<', $term));
+        return $this->builder->where('created_at', '<', $term);
     }
 }

@@ -16,6 +16,11 @@ class RemovalTorqueAnalysisFilter extends QueryFilters
         parent::__construct($request);
     }
 
+    public function syrup_id(int $term) : Builder
+    {
+        return $this->builder->where('syrup_id', $term);
+    }
+
     public function product_ids(array $term) : Builder
     {
         return $this->builder->whereRelation('syrup', fn($q) => $q->whereIn('product_id', $term));

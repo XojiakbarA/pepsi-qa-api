@@ -16,9 +16,9 @@ class ProductSeeder extends Seeder
     public function run()
     {
         $products = [
-            ['name' => 'Pepsi'],
-            ['name' => 'Mirinda'],
-            ['name' => '7UP'],
+            ['name' => 'Pepsi', 'logo' => 'storage/images/pepsi-logo.png'],
+            ['name' => 'Mirinda', 'logo' => 'storage/images/mirinda-logo.png'],
+            ['name' => '7UP', 'logo' => 'storage/images/7up-logo.png'],
             ['name' => 'Mountain Dew'],
             ['name' => 'Adrenaline Rush'],
             ['name' => 'Lipton Black Tea Lemon'],

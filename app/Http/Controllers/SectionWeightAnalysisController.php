@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Filters\SectionWeightAnalysisFilter;
+use App\Http\Requests\SectionWeightAnalysis\FilterRequest;
 use App\Http\Requests\SectionWeightAnalysis\StoreRequest;
 use App\Http\Requests\SectionWeightAnalysis\UpdateRequest;
+use App\Http\Resources\SectionWeightAnalysisResource;
 use App\Models\SectionWeightAnalysis;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class SectionWeightAnalysisController extends Controller
 {
@@ -13,19 +17,11 @@ class SectionWeightAnalysisController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(FilterRequest $request, SectionWeightAnalysisFilter $filter) : ResourceCollection
     {
-        //
-    }
+        $analyses = SectionWeightAnalysis::filter($filter)->latest()->paginate($request->per_page ?? 6);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return SectionWeightAnalysisResource::collection($analyses);
     }
 
     /**
@@ -46,17 +42,6 @@ class SectionWeightAnalysisController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(SectionWeightAnalysis $sectionWeightAnalysis)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\SectionWeightAnalysis  $sectionWeightAnalysis
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(SectionWeightAnalysis $sectionWeightAnalysis)
     {
         //
     }
