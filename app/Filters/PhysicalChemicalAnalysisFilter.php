@@ -53,11 +53,11 @@ class PhysicalChemicalAnalysisFilter extends QueryFilters
 
     public function from(string $term) : Builder
     {
-        return $this->builder->whereRelation('values', fn($q) => $q->where('created_at', '>', $term));
+        return $this->builder->whereRelation('values', fn($q) => $q->where('created_at', '>=', $term));
     }
 
     public function to(string $term) : Builder
     {
-        return $this->builder->whereRelation('values', fn($q) => $q->where('created_at', '<', $term));
+        return $this->builder->whereRelation('values', fn($q) => $q->where('created_at', '<=', $term));
     }
 }

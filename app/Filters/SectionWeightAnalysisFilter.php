@@ -54,11 +54,11 @@ class SectionWeightAnalysisFilter extends QueryFilters
 
     public function from(string $term) : Builder
     {
-        return $this->builder->where('created_at', '>', $term);
+        return $this->builder->where('created_at', '>=', $term);
     }
 
     public function to(string $term) : Builder
     {
-        return $this->builder->where('created_at', '<', $term);
+        return $this->builder->where('created_at', '<=', $term);
     }
 }

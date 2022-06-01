@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             PhysicalChemicalValueSeeder::class,
             RemovalTorqueAnalysisSeeder::class,
             SectionWeightAnalysisSeeder::class,
+            WaterAnalysisSeeder::class,
         ]);
     }
 }
