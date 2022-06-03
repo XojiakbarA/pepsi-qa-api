@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             RemovalTorqueAnalysisSeeder::class,
             SectionWeightAnalysisSeeder::class,
             WaterAnalysisSeeder::class,
+            SecureSealTestSeeder::class,
         ]);
     }
 }
