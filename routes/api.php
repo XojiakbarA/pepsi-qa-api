@@ -29,3 +29,4 @@ Route::apiResource('removal-torque-analyses', \App\Http\Controllers\RemovalTorqu
 Route::apiResource('section-weight-analyses', \App\Http\Controllers\SectionWeightAnalysisController::class);
 Route::apiResource('water-analyses', \App\Http\Controllers\WaterAnalysisController::class);
 Route::apiResource('secure-seal-tests', \App\Http\Controllers\SecureSealTestController::class);
+Route::apiResource('burst-tests', \App\Http\Controllers\BurstTestController::class);

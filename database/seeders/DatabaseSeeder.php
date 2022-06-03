@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
             SectionWeightAnalysisSeeder::class,
             WaterAnalysisSeeder::class,
             SecureSealTestSeeder::class,
+            BurstTestSeeder::class,
         ]);
     }
 }
