@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTankRequest;
 use App\Http\Requests\UpdateTankRequest;
+use App\Http\Resources\TankResource;
 use App\Models\Tank;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class TankController extends Controller
 {
@@ -13,9 +15,11 @@ class TankController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : ResourceCollection
     {
-        //
+        $tanks = Tank::all();
+
+        return TankResource::collection($tanks);
     }
 
     /**

@@ -24,7 +24,8 @@ class PhysicalChemicalAnalysisResource extends JsonResource
             'format_value' => $this->format->value,
             'cap_name' => $this->cap->name,
             'checked_at' => $this->created_at->setTimeZone('Asia/Tashkent')->format('d.m.Y'),
-            'values' => PhysicalChemicalValueResource::collection($this->values)
+            'values' => PhysicalChemicalValueResource::collection($this->values),
+            'target' => $this->syrup->invertedSyrup->target
         ];
     }
 }

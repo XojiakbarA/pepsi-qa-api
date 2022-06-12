@@ -19,7 +19,7 @@ class PhysicalChemicalAnalysisController extends Controller
      */
     public function index(FilterRequest $request, PhysicalChemicalAnalysisFilter $filter) : ResourceCollection
     {
-        $analyses = PhysicalChemicalAnalysis::filter($filter)->latest()->paginate($request->per_page ?? 5);
+        $analyses = PhysicalChemicalAnalysis::filter($filter)->latest()->paginate($request->per_page ?? 6);
 
         return PhysicalChemicalAnalysisResource::collection($analyses);
     }
