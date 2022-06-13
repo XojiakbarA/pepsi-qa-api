@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreFactoryRequest;
-use App\Http\Requests\UpdateFactoryRequest;
-use App\Http\Resources\FactoryResource;
-use App\Models\Factory;
+use App\Http\Requests\StoreShiftModeRequest;
+use App\Http\Requests\UpdateShiftModeRequest;
+use App\Http\Resources\ShiftModeResource;
+use App\Models\ShiftMode;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class FactoryController extends Controller
+class ShiftModeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,9 @@ class FactoryController extends Controller
      */
     public function index() : ResourceCollection
     {
-        $factories = Factory::all();
+        $shiftModes = ShiftMode::all();
 
-        return FactoryResource::collection($factories);
+        return ShiftModeResource::collection($shiftModes);
     }
 
     /**
@@ -35,10 +35,10 @@ class FactoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreFactoryRequest  $request
+     * @param  \App\Http\Requests\StoreShiftModeRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFactoryRequest $request)
+    public function store(StoreShiftModeRequest $request)
     {
         //
     }
@@ -46,10 +46,10 @@ class FactoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Factory  $factory
+     * @param  \App\Models\ShiftMode  $shiftMode
      * @return \Illuminate\Http\Response
      */
-    public function show(Factory $factory)
+    public function show(ShiftMode $shiftMode)
     {
         //
     }
@@ -57,10 +57,10 @@ class FactoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Factory  $factory
+     * @param  \App\Models\ShiftMode  $shiftMode
      * @return \Illuminate\Http\Response
      */
-    public function edit(Factory $factory)
+    public function edit(ShiftMode $shiftMode)
     {
         //
     }
@@ -68,11 +68,11 @@ class FactoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateFactoryRequest  $request
-     * @param  \App\Models\Factory  $factory
+     * @param  \App\Http\Requests\UpdateShiftModeRequest  $request
+     * @param  \App\Models\ShiftMode  $shiftMode
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateFactoryRequest $request, Factory $factory)
+    public function update(UpdateShiftModeRequest $request, ShiftMode $shiftMode)
     {
         //
     }
@@ -80,10 +80,10 @@ class FactoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Factory  $factory
+     * @param  \App\Models\ShiftMode  $shiftMode
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Factory $factory)
+    public function destroy(ShiftMode $shiftMode)
     {
         //
     }

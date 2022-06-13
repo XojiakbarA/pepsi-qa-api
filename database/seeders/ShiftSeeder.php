@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Services\ShiftService;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,25 +17,18 @@ class ShiftSeeder extends Seeder
     public function run()
     {
         $date = '2022-06-01';
-        $days = date('t', strtotime($date));
-        $values = [];
-        $shifts = ['day', 'night', 'weekend', 'weekend'];
+        $shift_mode_id = 3;
 
-        $remainder = $days % count($shifts);
+        $values = ShiftService::valueGenerator($date, $shift_mode_id);
 
-        for ($i = 0; $i < intdiv($days, count($shifts)); $i++) {
-            foreach ($shifts as $val) {
-                $values[] = $val;
-            }
-        }
-        for ($i = 0; $i < $remainder; $i++) {
-            $values[] = $shifts[$i];
-        }
-
-        DB::table('shifts')->insert([
-            'user_id' => 11,
-            'date' => $date,
-            'shift_values' => json_encode($values)
-        ]);
+        for ($i = 0; $i < 10; $i++) :
+            DB::table('shifts')->insert([
+                'user_id' => $i + 1,
+                'factory_id' => rand(1, 2),
+                'shift_mode_id' => $shift_mode_id,
+                'date' => $date,
+                'shift_values' => json_encode($values)
+            ]);
+        endfor;
     }
 }

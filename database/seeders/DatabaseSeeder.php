@@ -36,7 +36,8 @@ class DatabaseSeeder extends Seeder
             WaterAnalysisSeeder::class,
             SecureSealTestSeeder::class,
             BurstTestSeeder::class,
-            ShiftSeeder::class
+            ShiftModeSeeder::class,
+            ShiftSeeder::class,
         ]);
     }
 }

@@ -33,3 +33,5 @@ Route::apiResource('water-analyses', \App\Http\Controllers\WaterAnalysisControll
 Route::apiResource('secure-seal-tests', \App\Http\Controllers\SecureSealTestController::class);
 Route::apiResource('burst-tests', \App\Http\Controllers\BurstTestController::class);
 Route::apiResource('shifts', \App\Http\Controllers\ShiftController::class);
+Route::apiResource('shift-modes', \App\Http\Controllers\ShiftModeController::class);
+Route::apiResource('factories', \App\Http\Controllers\FactoryController::class);
