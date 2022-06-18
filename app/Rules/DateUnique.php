@@ -6,7 +6,7 @@ use App\Models\Shift;
 use Illuminate\Contracts\Validation\DataAwareRule;
 use Illuminate\Contracts\Validation\Rule;
 
-class UniqueMonth implements Rule, DataAwareRule
+class DateUnique implements Rule, DataAwareRule
 {
     protected array $data;
     protected string $names;
@@ -58,7 +58,7 @@ class UniqueMonth implements Rule, DataAwareRule
         return $this->names . '\'s shifts has already been created for ' . date('Y-m', strtotime($this->data['date']));
     }
 
-    public function setData($data) : UniqueMonth
+    public function setData($data) : DateUnique
     {
         $this->data = $data;
 

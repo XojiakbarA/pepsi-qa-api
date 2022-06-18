@@ -32,6 +32,8 @@ Route::apiResource('section-weight-analyses', \App\Http\Controllers\SectionWeigh
 Route::apiResource('water-analyses', \App\Http\Controllers\WaterAnalysisController::class);
 Route::apiResource('secure-seal-tests', \App\Http\Controllers\SecureSealTestController::class);
 Route::apiResource('burst-tests', \App\Http\Controllers\BurstTestController::class);
-Route::apiResource('shifts', \App\Http\Controllers\ShiftController::class);
 Route::apiResource('shift-modes', \App\Http\Controllers\ShiftModeController::class);
 Route::apiResource('factories', \App\Http\Controllers\FactoryController::class);
+
+Route::put('shifts', [\App\Http\Controllers\ShiftController::class, 'updateValues']);
+Route::apiResource('shifts', \App\Http\Controllers\ShiftController::class);

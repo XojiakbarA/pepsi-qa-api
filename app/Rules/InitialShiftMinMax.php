@@ -6,9 +6,11 @@ use App\Models\ShiftMode;
 use Illuminate\Contracts\Validation\DataAwareRule;
 use Illuminate\Contracts\Validation\Rule;
 
-class InitialShift implements Rule, DataAwareRule
+class InitialShiftMinMax implements Rule, DataAwareRule
 {
     protected array $data;
+    protected int $min = 0;
+    protected int $max;
     /**
      * Create a new rule instance.
      *
@@ -30,9 +32,9 @@ class InitialShift implements Rule, DataAwareRule
     {
         $shiftMode = ShiftMode::find($this->data['shift_mode_id']);
 
-        $count = count($shiftMode?->sequence ?? []);
+        $this->max = count($shiftMode?->sequence ?? []);
 
-        return $value < $count;
+        return $value <= $this->max && $value >= $this->min;
     }
 
     /**
@@ -42,10 +44,10 @@ class InitialShift implements Rule, DataAwareRule
      */
     public function message() : string
     {
-        return 'The :attribute is invalid.';
+        return 'The :attribute must be between ' . $this->min . ' and ' . $this->max . ' for this shift mode';
     }
 
-    public function setData($data) : InitialShift
+    public function setData($data) : InitialShiftMinMax
     {
         $this->data = $data;
 

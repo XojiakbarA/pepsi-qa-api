@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Filters\ShiftFilter;
 use App\Http\Requests\Shift\FilterRequest;
 use App\Http\Requests\Shift\StoreRequest;
-use App\Http\Requests\Shift\UpdateRequest;
+use App\Http\Requests\Shift\UpdateValueRequest;
 use App\Models\Shift;
 use App\Services\ShiftService;
-use Illuminate\Http\Response;
+use App\Traits\Responsable;
+use Illuminate\Http\JsonResponse;
 
 class ShiftController extends Controller
 {
+    use Responsable;
+
     protected ShiftService $service;
 
     public function __construct(ShiftService $shiftService)
@@ -19,18 +22,18 @@ class ShiftController extends Controller
         $this->service = $shiftService;
     }
 
-    public function index(FilterRequest $request, ShiftFilter $filter) : Response
+    public function index(FilterRequest $request, ShiftFilter $filter) : JsonResponse
     {
-        $shifts = $this->service->getAll($request, $filter);
+        $res = $this->service->getAll($request, $filter);
 
-        return response(compact('shifts'), 200);
+        return $this->response($res, JsonResponse::HTTP_OK);
     }
 
-    public function store(StoreRequest $request) : Response
+    public function store(StoreRequest $request) : JsonResponse
     {
-        $shifts = $this->service->store($request);
+        $res = $this->service->store($request);
 
-        return response(compact('shifts'), 201);
+        return $this->response($res, JsonResponse::HTTP_CREATED);
     }
 
     public function show(Shift $shifts)
@@ -38,7 +41,7 @@ class ShiftController extends Controller
         //
     }
 
-    public function update(UpdateRequest $request, Shift $shifts)
+    public function update(UpdateValueRequest $request, Shift $shifts)
     {
         //
     }
@@ -46,5 +49,12 @@ class ShiftController extends Controller
     public function destroy(Shift $shifts)
     {
         //
+    }
+
+    public function updateValues(UpdateValueRequest $request)
+    {
+        $res = $this->service->updateValues($request);
+
+        return $this->response($res, JsonResponse::HTTP_OK);
     }
 }

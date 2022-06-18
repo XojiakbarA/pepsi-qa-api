@@ -17,6 +17,8 @@ class ShiftResource extends JsonResource
         return [
             'id' => $this->id,
             'user_name' => $this->user->name,
+            'factory_name' => $this->factory->name,
+            'shift_mode' => $this->shiftMode->value,
             'date' => date_format(date_create($this->date), 'Y-m'),
             'shift_values' => $this->shift_values
         ];

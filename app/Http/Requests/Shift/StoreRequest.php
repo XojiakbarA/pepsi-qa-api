@@ -3,8 +3,8 @@
 namespace App\Http\Requests\Shift;
 
 use App\Models\ShiftMode;
-use App\Rules\InitialShift;
-use App\Rules\UniqueMonth;
+use App\Rules\InitialShiftMinMax;
+use App\Rules\DateUnique;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -29,10 +29,11 @@ class StoreRequest extends FormRequest
     {
         return [
             'user_ids' => 'required|array|min:1',
-            'user_ids.*' => 'integer',
-            'date' => ['required', 'date', new UniqueMonth],
-            'shift_mode_id' => ['required', Rule::exists(ShiftMode::class, 'id')],
-            'initial_shift' => ['required', new InitialShift]
+            'user_ids.*' => 'integer|distinct',
+            'factory_id' => 'required|integer',
+            'date' => ['required', 'date', new DateUnique],
+            'shift_mode_id' => ['required', 'integer', Rule::exists(ShiftMode::class, 'id')],
+            'initial_shift' => ['required', 'integer', new InitialShiftMinMax]
         ];
     }
 }
