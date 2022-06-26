@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\PhysicalChemicalAnalysis;
+use App\Models\NonCarbonatedAnalysis;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class PhysicalChemicalAnalysisPolicy
+class NonCarbonatedAnalysisPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class PhysicalChemicalAnalysisPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\PhysicalChemicalAnalysis  $physicalChemicalAnalysis
+     * @param  \App\Models\NonCarbonatedAnalysis  $nonCarbonatedAnalysis
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, PhysicalChemicalAnalysis $physicalChemicalAnalysis)
+    public function view(User $user, NonCarbonatedAnalysis $nonCarbonatedAnalysis)
     {
         //
     }
@@ -48,10 +48,10 @@ class PhysicalChemicalAnalysisPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\PhysicalChemicalAnalysis  $physicalChemicalAnalysis
+     * @param  \App\Models\NonCarbonatedAnalysis  $nonCarbonatedAnalysis
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, PhysicalChemicalAnalysis $physicalChemicalAnalysis)
+    public function update(User $user, NonCarbonatedAnalysis $nonCarbonatedAnalysis)
     {
         //
     }
@@ -60,10 +60,10 @@ class PhysicalChemicalAnalysisPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\PhysicalChemicalAnalysis  $physicalChemicalAnalysis
+     * @param  \App\Models\NonCarbonatedAnalysis  $nonCarbonatedAnalysis
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, PhysicalChemicalAnalysis $physicalChemicalAnalysis)
+    public function delete(User $user, NonCarbonatedAnalysis $nonCarbonatedAnalysis)
     {
         //
     }
@@ -72,10 +72,10 @@ class PhysicalChemicalAnalysisPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\PhysicalChemicalAnalysis  $physicalChemicalAnalysis
+     * @param  \App\Models\NonCarbonatedAnalysis  $nonCarbonatedAnalysis
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, PhysicalChemicalAnalysis $physicalChemicalAnalysis)
+    public function restore(User $user, NonCarbonatedAnalysis $nonCarbonatedAnalysis)
     {
         //
     }
@@ -84,10 +84,10 @@ class PhysicalChemicalAnalysisPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\PhysicalChemicalAnalysis  $physicalChemicalAnalysis
+     * @param  \App\Models\NonCarbonatedAnalysis  $nonCarbonatedAnalysis
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, PhysicalChemicalAnalysis $physicalChemicalAnalysis)
+    public function forceDelete(User $user, NonCarbonatedAnalysis $nonCarbonatedAnalysis)
     {
         //
     }

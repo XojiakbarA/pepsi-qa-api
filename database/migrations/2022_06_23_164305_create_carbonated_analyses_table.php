@@ -13,16 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('physical_chemical_values', function (Blueprint $table) {
+        Schema::create('carbonated_analyses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('physical_chemical_analysis_id')->constrained()->onDelete('cascade');
+            $table->foreignId('syrup_id')->constrained()->onDelete('cascade');
+            $table->foreignId('line_id');
+            $table->foreignId('container_supplier_id');
+            $table->foreignId('format_id');
+            $table->foreignId('cap_id');
             $table->foreignId('user_id');
             $table->float('temperature');
             $table->float('pressure');
             $table->float('carbonate');
             $table->float('brix');
             $table->float('inverted_brix')->nullable();
-            $table->float('turbidity')->nullable();
             $table->unsignedDouble('density')->nullable();
             $table->float('acidity')->nullable();
             $table->float('ph')->nullable();
@@ -38,6 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('physical_chemical_values');
+        Schema::dropIfExists('carbonated_analyses');
     }
 };

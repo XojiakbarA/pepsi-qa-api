@@ -6,7 +6,7 @@ use App\Traits\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PhysicalChemicalAnalysis extends Model
+class CarbonatedAnalysis extends Model
 {
     use HasFactory, Filterable;
 
@@ -30,8 +30,8 @@ class PhysicalChemicalAnalysis extends Model
     {
         return $this->belongsTo(Cap::class);
     }
-    public function values()
+    public function user()
     {
-        return $this->hasMany(PhysicalChemicalValue::class);
+        return $this->belongsTo(User::class);
     }
 }

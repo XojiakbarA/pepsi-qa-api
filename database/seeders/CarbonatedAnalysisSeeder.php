@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PhysicalChemicalValueSeeder extends Seeder
+class CarbonatedAnalysisSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,8 +17,16 @@ class PhysicalChemicalValueSeeder extends Seeder
     {
         for ($a = 0; $a < 100; $a++) :
             $user_id = rand(1, 10);
-            DB::table('physical_chemical_values')->insert([
-                'physical_chemical_analysis_id' => $a + 1,
+            $line_id = rand(1, 6);
+            $container_supplier_id = rand(1, 7);
+            $format_id = rand(1, 6);
+            $cap_id = rand(1, 2);
+            DB::table('carbonated_analyses')->insert([
+                'syrup_id' => $a + 1,
+                'line_id' => $line_id,
+                'container_supplier_id' => $container_supplier_id,
+                'format_id' => $format_id,
+                'cap_id' => $cap_id,
                 'user_id' => $user_id,
                 'temperature' => rand(150, 189)/10,
                 'pressure' => rand(490, 530)/10,
@@ -34,8 +42,12 @@ class PhysicalChemicalValueSeeder extends Seeder
             ]);
 
             for ($i = 0; $i < 3; $i++) :
-                DB::table('physical_chemical_values')->insert([
-                    'physical_chemical_analysis_id' => $a + 1,
+                DB::table('carbonated_analyses')->insert([
+                    'syrup_id' => $a + 1,
+                    'line_id' => $line_id,
+                    'container_supplier_id' => $container_supplier_id,
+                    'format_id' => $format_id,
+                    'cap_id' => $cap_id,
                     'user_id' => $user_id,
                     'temperature' => rand(150, 189)/10,
                     'pressure' => rand(490, 530)/10,
@@ -46,8 +58,12 @@ class PhysicalChemicalValueSeeder extends Seeder
                 ]);
             endfor;
 
-            DB::table('physical_chemical_values')->insert([
-                'physical_chemical_analysis_id' => $a + 1,
+            DB::table('carbonated_analyses')->insert([
+                'syrup_id' => $a + 1,
+                'line_id' => $line_id,
+                'container_supplier_id' => $container_supplier_id,
+                'format_id' => $format_id,
+                'cap_id' => $cap_id,
                 'user_id' => $user_id,
                 'temperature' => rand(150, 189)/10,
                 'pressure' => rand(490, 530)/10,
@@ -63,8 +79,12 @@ class PhysicalChemicalValueSeeder extends Seeder
             ]);
 
             for ($i = 0; $i < 3; $i++) :
-                DB::table('physical_chemical_values')->insert([
-                    'physical_chemical_analysis_id' => $a + 1,
+                DB::table('carbonated_analyses')->insert([
+                    'syrup_id' => $a + 1,
+                    'line_id' => $line_id,
+                    'container_supplier_id' => $container_supplier_id,
+                    'format_id' => $format_id,
+                    'cap_id' => $cap_id,
                     'user_id' => $user_id,
                     'temperature' => rand(150, 189)/10,
                     'pressure' => rand(490, 530)/10,
@@ -75,8 +95,13 @@ class PhysicalChemicalValueSeeder extends Seeder
                 ]);
             endfor;
 
-            DB::table('physical_chemical_values')->insert([
-                'physical_chemical_analysis_id' => $a + 1,
+            DB::table('carbonated_analyses')->insert([
+                'syrup_id' => $a + 1,
+                'line_id' => $line_id,
+                'container_supplier_id' => $container_supplier_id,
+                'format_id' => $format_id,
+                'cap_id' => $cap_id,
+                'user_id' => $user_id,
                 'user_id' => $user_id,
                 'temperature' => rand(150, 189)/10,
                 'pressure' => rand(490, 530)/10,

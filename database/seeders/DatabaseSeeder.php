@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
 
         $this->call([
             PositionSeeder::class,
@@ -29,8 +29,6 @@ class DatabaseSeeder extends Seeder
             SyrupSeeder::class,
             InvertedSyrupSeeder::class,
             ContainerSupplierSeeder::class,
-            PhysicalChemicalAnalysisSeeder::class,
-            PhysicalChemicalValueSeeder::class,
             RemovalTorqueAnalysisSeeder::class,
             SectionWeightAnalysisSeeder::class,
             WaterAnalysisSeeder::class,
@@ -38,6 +36,8 @@ class DatabaseSeeder extends Seeder
             BurstTestSeeder::class,
             ShiftModeSeeder::class,
             ShiftSeeder::class,
+            CarbonatedAnalysisSeeder::class,
+            NonCarbonatedAnalysisSeeder::class
         ]);
     }
 }

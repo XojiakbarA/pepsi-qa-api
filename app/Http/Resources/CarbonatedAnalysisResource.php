@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PhysicalChemicalValueResource extends JsonResource
+class CarbonatedAnalysisResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,17 +16,24 @@ class PhysicalChemicalValueResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'target' => $this->syrup->invertedSyrup->target,
+            'syrup_id' => $this->syrup_id,
+            'syrup_name' => $this->syrup->product->name . " " . $this->syrup_id,
+            'product_logo' => $this->syrup->product->logo,
+            'line_name' => $this->line->name . " " . $this->line->speed,
+            'container_supplier_name' => $this->containerSupplier->name,
+            'format_value' => $this->format->value,
+            'cap_name' => $this->cap->name,
             'temperature' => $this->temperature,
             'pressure' => $this->pressure,
             'carbonate' => $this->carbonate,
             'brix' => $this->brix,
             'inverted_brix' => $this->inverted_brix,
-            'turbidity' => $this->turbidity,
             'density' => $this->density,
             'acidity' => $this->acidity,
             'ph' => $this->ph,
             'fullness' => $this->fullness,
-            'time' => $this->created_at->setTimeZone('Asia/Tashkent')->format('G:i'),
+            'checked_at' => $this->created_at,
             'checked_by' => $this->user->name
         ];
     }
