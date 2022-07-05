@@ -19,6 +19,7 @@ class SyrupResource extends JsonResource
             'tank_number' => $this->tank->factory->name . ' ' . $this->tank->number,
             'product_name' => $this->product->name . ' ' . $this->id,
             'product_logo' => $this->product->logo,
+            'carbonated' => $this->product->carbonated,
             'volume' => $this->volume,
             'sugar_syrup_brix' => $this->sugar_syrup_brix,
             'blend_syrup_brix' => $this->blend_syrup_brix,
