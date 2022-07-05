@@ -19,7 +19,7 @@ class WaterAnalysisController extends Controller
      */
     public function index(FilterRequest $request, WaterAnalysisFilter $filter) : ResourceCollection
     {
-        $analyses = WaterAnalysis::filter($filter)->latest()->paginate($request->per_page ?? 10);
+        $analyses = WaterAnalysis::filter($filter)->latest()->paginate($request->per_page ?? 20);
 
         return WaterAnalysisResource::collection($analyses);
     }

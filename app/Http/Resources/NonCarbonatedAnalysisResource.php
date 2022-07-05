@@ -16,7 +16,7 @@ class NonCarbonatedAnalysisResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'target' => $this->syrup->invertedSyrup->target,
+            'target' => $this->syrup?->invertedSyrup?->target,
             'syrup_id' => $this->syrup_id,
             'syrup_name' => $this->syrup->product->name . " " . $this->syrup_id,
             'product_logo' => $this->syrup->product->logo,

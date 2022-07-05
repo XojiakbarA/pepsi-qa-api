@@ -19,7 +19,7 @@ class SyrupController extends Controller
      */
     public function index(FilterRequest $request, SyrupFilter $filter) : ResourceCollection
     {
-        $syrups = Syrup::filter($filter)->paginate($request->per_page ?? 10);
+        $syrups = Syrup::filter($filter)->paginate($request->per_page ?? 20);
 
         return SyrupResource::collection($syrups);
     }
