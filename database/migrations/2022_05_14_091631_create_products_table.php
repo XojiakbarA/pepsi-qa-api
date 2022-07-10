@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('logo')->nullable();
+            $table->boolean('is_carbonated')->default(0);
             $table->timestamps();
         });
     }

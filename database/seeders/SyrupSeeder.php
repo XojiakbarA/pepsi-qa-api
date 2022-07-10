@@ -15,7 +15,7 @@ class SyrupSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 230; $i++) :
+        for ($i = 0; $i < 100; $i++) :
             DB::table('syrups')->insert([
                 'tank_id' => random_int(1, 15),
                 'product_id' => 1,
@@ -34,20 +34,20 @@ class SyrupSeeder extends Seeder
             ]);
         endfor;
 
-        for ($i = 0; $i < 220; $i++) :
+        for ($i = 100; $i < 300; $i++) :
             DB::table('syrups')->insert([
-                'tank_id' => random_int(16, 26),
-                'product_id' => 1,
+                'tank_id' => random_int(1, 15),
+                'product_id' => rand(6, 11),
                 'user_id' => rand(1, 10),
-                'volume' => 27200,
+                'volume' => 7500,
                 'sugar_syrup_brix' => rand(6278, 6311)/100,
-                'blend_syrup_brix' => rand(5359, 5397)/100,
-                'drink_brix' => rand(1070, 1091)/100,
+                'blend_syrup_brix' => rand(4210, 4260)/100,
+                'drink_brix' => rand(800, 820)/100,
                 'blend_density' => rand(12475, 12510)/10000,
                 'drink_density' => rand(10411, 10419)/10000,
-                'drink_inverted_brix' => rand(1120, 1149)/100,
-                'drink_acidity' => rand(1190, 1230)/100,
-                'drink_ph' => rand(239, 252)/100,
+                'drink_inverted_brix' => null,
+                'drink_acidity' => rand(170, 200)/100,
+                'drink_ph' => rand(320, 326)/100,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

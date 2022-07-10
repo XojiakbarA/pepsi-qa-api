@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('shifts', function (Blueprint $table) {
-            $table->foreignId('factory_id')->nullable()->after('user_id');
-            $table->foreignId('shift_mode_id')->nullable()->after('factory_id');
+            $table->foreignId('factory_id')->nullable()->after('user_id')->constrained();
+            $table->foreignId('shift_mode_id')->nullable()->after('factory_id')->constrained();
         });
     }
 
@@ -27,7 +27,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('shifts', function (Blueprint $table) {
-            $table->dropColumn(['factory_id', 'shift_mode_id']);
+            $table->dropConstrainedForeignId('factory_id');
+            $table->dropConstrainedForeignId('shift_mode_id');
         });
     }
 };

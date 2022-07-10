@@ -17,10 +17,10 @@ class NonCarbonatedAnalysisSeeder extends Seeder
     {
         for ($a = 100; $a < 300; $a++) :
             $user_id = rand(1, 10);
-            $line_id = rand(1, 6);
-            $container_supplier_id = rand(1, 7);
-            $format_id = rand(1, 6);
-            $cap_id = rand(1, 2);
+            $line_id = 4;
+            $container_supplier_id = 3;
+            $format_id = rand(2, 4);
+            $cap_id = 2;
             DB::table('non_carbonated_analyses')->insert([
                 'syrup_id' => $a + 1,
                 'line_id' => $line_id,
@@ -34,7 +34,7 @@ class NonCarbonatedAnalysisSeeder extends Seeder
                 'pressure_after_filling' => rand(20, 14)/10,
                 'pressure_after_cooling' => rand(2, 10)/10,
                 'brix_after_filling' => rand(790, 830)/100,
-                'brix_after_colling' => rand(780, 820)/100,
+                'brix_after_cooling' => rand(780, 820)/100,
                 'turbidity' => rand(90, 160)/10,
                 'density' => rand(10028, 10031)/10000,
                 'acidity' => rand(175, 210)/100,
@@ -58,7 +58,7 @@ class NonCarbonatedAnalysisSeeder extends Seeder
                     'pressure_after_filling' => rand(20, 14)/10,
                     'pressure_after_cooling' => rand(2, 10)/10,
                     'brix_after_filling' => rand(790, 830)/100,
-                    'brix_after_colling' => rand(780, 820)/100,
+                    'brix_after_cooling' => rand(780, 820)/100,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ]);
@@ -77,7 +77,7 @@ class NonCarbonatedAnalysisSeeder extends Seeder
                 'pressure_after_filling' => rand(20, 14)/10,
                 'pressure_after_cooling' => rand(2, 10)/10,
                 'brix_after_filling' => rand(790, 830)/100,
-                'brix_after_colling' => rand(780, 820)/100,
+                'brix_after_cooling' => rand(780, 820)/100,
                 'turbidity' => rand(90, 160)/10,
                 'density' => rand(10028, 10031)/10000,
                 'acidity' => rand(175, 210)/100,
@@ -101,7 +101,7 @@ class NonCarbonatedAnalysisSeeder extends Seeder
                     'pressure_after_filling' => rand(20, 14)/10,
                     'pressure_after_cooling' => rand(2, 10)/10,
                     'brix_after_filling' => rand(790, 830)/100,
-                    'brix_after_colling' => rand(780, 820)/100,
+                    'brix_after_cooling' => rand(780, 820)/100,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ]);

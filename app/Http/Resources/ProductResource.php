@@ -18,7 +18,7 @@ class ProductResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'logo' => $this->logo,
-            'carbonated' => $this->carbonated,
+            'is_carbonated' => $this->is_carbonated,
         ];
     }
 }

@@ -16,17 +16,61 @@ class ProductSeeder extends Seeder
     public function run()
     {
         $products = [
-            ['name' => 'Pepsi', 'logo' => 'storage/images/pepsi-logo.png'],
-            ['name' => 'Mirinda', 'logo' => 'storage/images/mirinda-logo.png'],
-            ['name' => '7UP', 'logo' => 'storage/images/7up-logo.png'],
-            ['name' => 'Mountain Dew', 'logo' => 'storage/images/7up-logo.png'],
-            ['name' => 'Adrenaline Rush', 'logo' => 'storage/images/7up-logo.png'],
-            ['name' => 'Lipton Black Tea Lemon', 'logo' => 'storage/images/7up-logo.png'],
-            ['name' => 'Lipton Green Tea Lemon', 'logo' => 'storage/images/7up-logo.png'],
-            ['name' => 'Lipton Black Tea Peach', 'logo' => 'storage/images/7up-logo.png'],
-            ['name' => 'Lipton Green Tea Peach', 'logo' => 'storage/images/7up-logo.png'],
-            ['name' => 'Lipton Black Tea Raspberry', 'logo' => 'storage/images/7up-logo.png'],
-            ['name' => 'Lipton Green Tea Raspberry', 'logo' => 'storage/images/7up-logo.png'],
+            [
+                'name' => 'Pepsi',
+                'logo' => 'storage/images/pepsi-logo.png',
+                'is_carbonated' => 1,
+            ],
+            [
+                'name' => 'Mirinda',
+                'logo' => 'storage/images/mirinda-logo.png',
+                'is_carbonated' => 1,
+            ],
+            [
+                'name' => '7UP',
+                'logo' => 'storage/images/7up-logo.png',
+                'is_carbonated' => 1,
+            ],
+            [
+                'name' => 'Mountain Dew',
+                'logo' => 'storage/images/mountain-dew-logo.png',
+                'is_carbonated' => 1,
+            ],
+            [
+                'name' => 'Adrenaline Rush',
+                'logo' => 'storage/images/adrenaline-logo.png',
+                'is_carbonated' => 1,
+            ],
+            [
+                'name' => 'Lipton Black Tea Lemon',
+                'logo' => 'storage/images/lipton-logo.png',
+                'is_carbonated' => 0,
+            ],
+            [
+                'name' => 'Lipton Green Tea Lemon',
+                'logo' => 'storage/images/lipton-logo.png',
+                'is_carbonated' => 0,
+            ],
+            [
+                'name' => 'Lipton Black Tea Peach',
+                'logo' => 'storage/images/lipton-logo.png',
+                'is_carbonated' => 0,
+            ],
+            [
+                'name' => 'Lipton Green Tea Peach',
+                'logo' => 'storage/images/lipton-logo.png',
+                'is_carbonated' => 0,
+            ],
+            [
+                'name' => 'Lipton Black Tea Raspberry',
+                'logo' => 'storage/images/lipton-logo.png',
+                'is_carbonated' => 0,
+            ],
+            [
+                'name' => 'Lipton Green Tea Raspberry',
+                'logo' => 'storage/images/lipton-logo.png',
+                'is_carbonated' => 0,
+            ],
         ];
 
         DB::table('products')->insert($products);

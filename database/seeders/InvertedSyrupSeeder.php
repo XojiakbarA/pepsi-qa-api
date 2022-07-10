@@ -15,7 +15,7 @@ class InvertedSyrupSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 660; $i++) :
+        for ($i = 0; $i < 100; $i++) :
             DB::table('inverted_syrups')->insert([
                 'syrup_id' => $i + 1,
                 'user_id' => rand(1, 10),

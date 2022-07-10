@@ -16,7 +16,7 @@ class ContainerSeeder extends Seeder
     public function run()
     {
         $containers = [
-            ['name' => 'Glass'],
+            ['name' => 'RGB'],
             ['name' => 'PET'],
             ['name' => 'CAN']
         ];

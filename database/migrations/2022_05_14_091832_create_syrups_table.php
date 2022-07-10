@@ -24,7 +24,7 @@ return new class extends Migration
             $table->float('drink_brix');
             $table->unsignedDouble('blend_density');
             $table->unsignedDouble('drink_density');
-            $table->float('drink_inverted_brix');
+            $table->float('drink_inverted_brix')->nullable();
             $table->float('drink_acidity');
             $table->float('drink_ph');
             $table->timestamps();
