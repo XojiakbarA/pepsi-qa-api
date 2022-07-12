@@ -18,9 +18,10 @@ class ShiftResource extends JsonResource
             'id' => $this->id,
             'user_name' => $this->user->name,
             'factory_name' => $this->factory->name,
-            'shift_mode' => $this->shiftMode->value,
+            'shift_mode_type' => $this->shiftMode->type,
+            'shift_mode_values' => $this->shiftMode->values,
+            'shift_values' => $this->shift_values,
             'date' => date_format(date_create($this->date), 'Y-m'),
-            'shift_values' => $this->shift_values
         ];
     }
 }

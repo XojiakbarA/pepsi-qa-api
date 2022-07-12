@@ -16,7 +16,7 @@ class ShiftModeResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'value' => $this->value,
+            'type' => $this->type,
             'sequence' => $this->sequence
         ];
     }

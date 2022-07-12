@@ -19,7 +19,9 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
-            'position_name' => $this->position->name
+            'position_name' => $this->position->name,
+            'factory_name' => $this?->currentShift?->factory->name,
+            'is_on_shift' => $this->isOnShift
         ];
     }
 }

@@ -25,7 +25,7 @@ class InvertedSyrupResource extends JsonResource
             'drink_ph' => $this->drink_ph,
             'target' => $this->target,
             'checked_by' => $this->user->name,
-            'checked_at' => $this->created_at->setTimeZone('Asia/Tashkent')->format('d.m.Y H:i'),
+            'checked_at' => $this->created_at,
         ];
     }
 }

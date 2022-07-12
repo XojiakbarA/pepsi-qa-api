@@ -26,7 +26,7 @@ class WaterAnalysisResource extends JsonResource
             'cl' => $this->cl,
             'mn' => $this->mn,
             'fe' => $this->fe,
-            'checked_at' => $this->created_at->setTimeZone('Asia/Tashkent')->format('d.m.Y G:i'),
+            'checked_at' => $this->created_at,
             'checked_by' => $this->user->name,
         ];
     }

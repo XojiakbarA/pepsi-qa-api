@@ -24,7 +24,7 @@ class SectionWeightAnalysisResource extends JsonResource
             'format_value' => $this->format->value,
             'cap_name' => $this->cap->name,
             'checked_by' => $this->user->name,
-            'checked_at' => $this->created_at->setTimeZone('Asia/Tashkent')->format('d.m.Y G:i'),
+            'checked_at' => $this->created_at,
             'section_weight_values' => $this->section_weight_values,
         ];
     }

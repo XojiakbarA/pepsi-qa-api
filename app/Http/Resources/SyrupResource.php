@@ -19,7 +19,7 @@ class SyrupResource extends JsonResource
             'tank_number' => $this->tank->factory->name . ' ' . $this->tank->number,
             'product_name' => $this->product->name . ' ' . $this->id,
             'product_logo' => $this->product->logo,
-            'carbonated' => $this->product->carbonated,
+            'is_carbonated' => $this->product->is_carbonated,
             'volume' => $this->volume,
             'sugar_syrup_brix' => $this->sugar_syrup_brix,
             'blend_syrup_brix' => $this->blend_syrup_brix,
@@ -30,7 +30,7 @@ class SyrupResource extends JsonResource
             'drink_acidity' => $this->drink_acidity,
             'drink_ph' => $this->drink_ph,
             'checked_by' => $this->user->name,
-            'checked_at' => $this->created_at->setTimeZone('Asia/Tashkent')->format('d.m.Y H:i'),
+            'checked_at' => $this->created_at,
             'inverted_syrup' => new InvertedSyrupResource($this->invertedSyrup),
         ];
     }
