@@ -86,7 +86,21 @@ class ShiftService
                 $shiftValues = $shift->shift_values;
 
                 foreach ($values as $value) :
-                    $shiftValues[$value['index']] = $value['value'];
+                    $shiftValues[$value['index']]['value'] = $value['value'];
+                    $y = date('Y', strtotime($shift->date));
+                    $m = date('m', strtotime($shift->date));
+                    $d = str_pad($value['index'] + 1, 2, 0, STR_PAD_LEFT);
+                    $n = str_pad($value['index'] + 2, 2, 0, STR_PAD_LEFT);
+                    if ($value['value'] === 'day') :
+                        $shiftValues[$value['index']]['start'] = date($y . '-' . $m . '-' . $d . ' ' . $shift->shiftMode[$value['value']]['start']);
+                        $shiftValues[$value['index']]['end'] = date($y . '-' . $m . '-' . $d . ' ' . $shift->shiftMode[$value['value']]['end']);
+                    elseif ($value['value'] === 'night') :
+                        $shiftValues[$value['index']]['start'] = date($y . '-' . $m . '-' . $d . ' ' . $shift->shiftMode[$value['value']]['start']);
+                        $shiftValues[$value['index']]['end'] = date($y . '-' . $m . '-' . $n . ' ' . $shift->shiftMode[$value['value']]['end']);
+                    else :
+                        $shiftValues[$value['index']]['start'] = null;
+                        $shiftValues[$value['index']]['end'] = null;
+                    endif;
                 endforeach;
 
                 $shift->update([ 'shift_values' => $shiftValues ]);
@@ -128,6 +142,23 @@ class ShiftService
         for ($i = 0; $i < $remainder; $i++) :
             $values[] = $sequence[$i];
         endfor;
+
+        $values = array_map(function ($value, $i) use ($date, $shiftMode) {
+            $m = date('m', strtotime($date));
+            $y = date('Y', strtotime($date));
+            $d = str_pad($i + 1, 2, 0, STR_PAD_LEFT);
+            $n = str_pad($i + 2, 2, 0, STR_PAD_LEFT);
+            $start = null;
+            $end = null;
+            if ($value === 'day') {
+                $start = date($y . '-' . $m . '-' . $d . ' ' . $shiftMode[$value]['start']);
+                $end = date($y . '-' . $m . '-' . $d . ' ' . $shiftMode[$value]['end']);
+            } elseif ($value === 'night') {
+                $start = date($y . '-' . $m . '-' . $d . ' ' . $shiftMode[$value]['start']);
+                $end = date($y . '-' . $m . '-' . $n . ' ' . $shiftMode[$value]['end']);
+            }
+            return compact('value', 'start', 'end');
+        }, $values, array_keys($values));
 
         return $values;
     }

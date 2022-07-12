@@ -16,11 +16,41 @@ class ShiftModeSeeder extends Seeder
     public function run()
     {
         $shiftModes = [
-            [ 'value' => 2, 'sequence' => json_encode(['day', 'weekend']) ],
-            [ 'value' => 3, 'sequence' => json_encode(['day', 'day', 'night', 'night', 'weekend', 'weekend']) ],
-            [ 'value' => 4, 'sequence' => json_encode(['day', 'night', 'weekend', 'weekend']) ],
-            [ 'value' => 5, 'sequence' => json_encode(['day', 'day', 'day', 'day', 'day', 'weekend', 'weekend']) ],
-            [ 'value' => 6, 'sequence' => json_encode(['day', 'day', 'day', 'day', 'day', 'day', 'weekend']) ],
+            [
+                'type' => 2,
+                'values' => json_encode(['day', 'weekend', 'leave', 'sick_leave']),
+                'day' => json_encode(['start' => '08:00:00', 'end' => '19:59:59']),
+                'night' => null,
+                'sequence' => json_encode(['day', 'weekend'])
+            ],
+            [
+                'type' => 3,
+                'values' => json_encode(['day', 'night', 'weekend', 'leave', 'sick_leave']),
+                'day' => json_encode(['start' => '08:00:00', 'end' => '19:59:59']),
+                'night' => json_encode(['start' => '20:00:00', 'end' => '07:59:59']),
+                'sequence' => json_encode(['day', 'day', 'night', 'night', 'weekend', 'weekend'])
+            ],
+            [
+                'type' => 4,
+                'values' => json_encode(['day', 'night', 'weekend', 'leave', 'sick_leave']),
+                'day' => json_encode(['start' => '08:00:00', 'end' => '19:59:59']),
+                'night' => json_encode(['start' => '20:00:00', 'end' => '07:59:59']),
+                'sequence' => json_encode(['day', 'night', 'weekend', 'weekend'])
+            ],
+            [
+                'type' => 5,
+                'values' => json_encode(['day', 'weekend', 'leave', 'sick_leave']),
+                'day' => json_encode(['start' => '09:00:00', 'end' => '17:59:59']),
+                'night' => null,
+                'sequence' => json_encode(['day', 'day', 'day', 'day', 'day', 'weekend', 'weekend'])
+            ],
+            [
+                'type' => 6,
+                'values' => json_encode(['day', 'weekend', 'leave', 'sick_leave']),
+                'day' => json_encode(['start' => '09:00:00', 'end' => '17:59:59']),
+                'night' => null,
+                'sequence' => json_encode(['day', 'day', 'day', 'day', 'day', 'day', 'weekend'])
+            ],
         ];
 
         DB::table('shift_modes')->insert($shiftModes);

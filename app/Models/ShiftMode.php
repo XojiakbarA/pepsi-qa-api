@@ -10,6 +10,9 @@ class ShiftMode extends Model
     use HasFactory;
 
     protected $casts = [
-        'sequence' => 'array'
+        'sequence' => 'array',
+        'day' => 'array',
+        'night' => 'array',
+        'values' => 'array'
     ];
 }

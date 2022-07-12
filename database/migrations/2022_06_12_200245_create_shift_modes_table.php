@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('shift_modes', function (Blueprint $table) {
             $table->id();
-            $table->integer('value');
+            $table->integer('type');
+            $table->json('values');
+            $table->json('day')->nullable();
+            $table->json('night')->nullable();
             $table->json('sequence');
             $table->timestamps();
         });

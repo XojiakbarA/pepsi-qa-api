@@ -16,7 +16,7 @@ class ShiftSeeder extends Seeder
      */
     public function run()
     {
-        $date = '2022-06-01';
+        $date = date('Y-m-01');
         $shift_mode_id = 3;
 
         $values = ShiftService::valueGenerator($date, $shift_mode_id);
