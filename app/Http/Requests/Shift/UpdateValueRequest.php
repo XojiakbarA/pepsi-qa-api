@@ -2,11 +2,10 @@
 
 namespace App\Http\Requests\Shift;
 
-use App\Enums\ShiftValues;
+use App\Rules\ExistsShiftModeValues;
 use App\Rules\ValueDistinct;
 use App\Rules\IndexMinMax;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Enum;
 
 class UpdateValueRequest extends FormRequest
 {
@@ -29,11 +28,11 @@ class UpdateValueRequest extends FormRequest
     {
         return [
             'shifts' => 'required|array|min:1',
-            'shifts.*' => [new IndexMinMax, new ValueDistinct],
+            'shifts.*' => [new IndexMinMax, new ValueDistinct, new ExistsShiftModeValues],
             'shifts.*.id' => 'required|integer|distinct',
             'shifts.*.values' => 'required|array|min:1',
             'shifts.*.values.*.index' => 'required|integer',
-            'shifts.*.values.*.value' => ['required', new Enum(ShiftValues::class)]
+            'shifts.*.values.*.value' => ['required']
         ];
     }
 }
