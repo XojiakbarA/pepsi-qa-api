@@ -14,13 +14,19 @@ trait Responsable
         'errors' => null,
     ];
 
-    public function response(JsonResource|Throwable $result, int $statusCode) : JsonResponse
+    public function response(JsonResource|Throwable|bool $result, int $statusCode) : JsonResponse
     {
         if ($result instanceof JsonResource) :
 
             $this->additional['message'] = JsonResponse::$statusTexts[$statusCode];
 
             return $result->additional($this->additional)->response()->setStatusCode($statusCode);
+
+        elseif (is_bool($result)) :
+
+            $this->additional['message'] = JsonResponse::$statusTexts[$statusCode];
+
+            return response()->json($this->additional, $statusCode);
 
         elseif ($result instanceof Throwable) :
 

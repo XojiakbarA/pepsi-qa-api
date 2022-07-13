@@ -6,10 +6,11 @@ use App\Traits\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Shift extends Model
 {
-    use HasFactory, Filterable;
+    use HasFactory, SoftDeletes, Filterable;
 
     protected $fillable = ['user_id', 'factory_id', 'shift_mode_id', 'date', 'shift_values'];
 

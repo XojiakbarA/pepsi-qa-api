@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('date');
             $table->json('shift_values');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

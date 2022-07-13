@@ -110,8 +110,18 @@ class ShiftService
 
             return ShiftResource::collection([]);
 
-        } catch (\Throwable $th) {
+        } catch (Throwable $th) {
             DB::rollBack();
+            return $th;
+        }
+    }
+
+    public function destroy(Shift $shift) : bool|Throwable
+    {
+        try {
+            return $shift->delete();
+
+        } catch (Throwable $th) {
             return $th;
         }
     }

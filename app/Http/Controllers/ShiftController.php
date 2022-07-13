@@ -36,19 +36,21 @@ class ShiftController extends Controller
         return $this->response($res, JsonResponse::HTTP_CREATED);
     }
 
-    public function show(Shift $shifts)
+    public function show(Shift $shift)
     {
         //
     }
 
-    public function update(UpdateValueRequest $request, Shift $shifts)
+    public function update(UpdateValueRequest $request, Shift $shift)
     {
         //
     }
 
-    public function destroy(Shift $shifts)
+    public function destroy(Shift $shift) : JsonResponse
     {
-        //
+        $res = $this->service->destroy($shift);
+
+        return $this->response($res, JsonResponse::HTTP_NO_CONTENT);
     }
 
     public function updateValues(UpdateValueRequest $request)
